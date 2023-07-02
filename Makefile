@@ -4,7 +4,7 @@ DB_PORT=5433
 DB_PASSWORD=12345
 # public
 ## run app
-run: pre-check db schema
+run: db schema
 	go run .
 
 ## varify result
