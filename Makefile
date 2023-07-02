@@ -4,7 +4,7 @@ DB_PORT=5433
 DB_PASSWORD=12345
 # public
 ## run app
-run: db schema
+run: pre-check db schema
 	go run .
 
 ## varify result
@@ -57,11 +57,12 @@ pre-check:
 
 	@echo "\nChecking for docker group "
 	@if [ $(shell cat /etc/group | grep docker) ]; then \
+		echo " ";\
 	else \
 		echo "setup docker group"; \
 	fi
 
-	echo '太讚了可以跑程式啦 > make run'
+	echo -e '    東西都有,可以跑啦 > $$make run \n'
 
 
 .PHONY: db psql schema rmdb run select notice test pre-check
