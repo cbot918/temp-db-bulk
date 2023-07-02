@@ -57,10 +57,11 @@ pre-check:
 
 	@echo "\nChecking for docker group "
 	@if [ $(shell cat /etc/group | grep docker) ]; then \
-		echo yes; \
 	else \
 		echo "setup docker group"; \
 	fi
+
+	echo '太讚了可以跑程式啦 > make run'
 
 
 .PHONY: db psql schema rmdb run select notice test pre-check
