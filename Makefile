@@ -62,8 +62,9 @@ pre-check:
 		echo "setup docker group"; \
 	fi
 
-	echo -e '    東西都有,可以跑啦 > $$make run \n'
-
+	echo -e '    東西都有,可以跑啦 \n'
+	echo -e '    小提示, Password: 是指資料庫密碼預設 12345 \n'
+	echo -e '    以下開始自動執行 \n'
 
 .PHONY: db psql schema rmdb run select notice test pre-check
 .SILENT: db psql schema rmdb run select notice test pre-check
