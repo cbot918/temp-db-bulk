@@ -36,7 +36,7 @@ rmdb:
 
 pre-check:
 	@echo "Checking go install needed"
-	@if [ $(shell which gggg 2>/dev/null || echo FALSE) = "FALSE" ]; then \
+	@if [ $(shell which go 2>/dev/null || echo FALSE) = "FALSE" ]; then \
 		read -p " 跑程式需要go但您目前沒裝 > 要幫你/妳裝嗎? (Y/y): " uinput; \
 		if [ "$$uinput" = "" ] || [ "$$uinput" = "Y" ] || [ "$$uinput" = "y" ]; then \
 			echo "go installing"; \
@@ -46,7 +46,7 @@ pre-check:
 	fi
 	
 	@echo "\nChecking docker install needed"
-	@if [ $(shell which rrrr 2>/dev/null || echo FALSE) = "FALSE" ]; then \
+	@if [ $(shell which docker 2>/dev/null || echo FALSE) = "FALSE" ]; then \
 		read -p " 跑程式需要docker但您目前沒裝 > 要幫你/妳裝嗎? (Y/y): " uinput; \
 		if [ "$$uinput" = "" ] || [ "$$uinput" = "Y" ] || [ "$$uinput" = "y" ]; then \
 			echo "docker installing"; \
