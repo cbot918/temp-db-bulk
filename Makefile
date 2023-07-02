@@ -14,11 +14,11 @@ select:
 psql:
 	docker run -it --rm --network bridge postgres psql -h $(shell docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' temp-postgres) -U postgres
 
-
-#-------------------
 notice:
 	echo -e '遇到docker執行權限問題的話可能要設置 docker group\n\n sudo groupadd docker\n sudo usermod -aG docker $$USER \n newgrp docker \n'
 
+#-------------------
+# private 
 db:
 	docker run --name $(CONTAINER_NAME) -p 5433:5432 -e PGPASSWORD=12345 -e POSTGRES_PASSWORD=12345 -e POSTGRES_DB=$(DB_NAME) -d postgres
 
